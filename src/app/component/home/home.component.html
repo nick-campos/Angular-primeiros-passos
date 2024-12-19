@@ -1,7 +1,26 @@
 <app-footer></app-footer>
 
-{{ cont }}
+{{ count }}
 
 <button (mouseenter)="teste()">Clique aqui</button>
 
 <input type="text" (change)="teste()">
+
+@if(value){
+    <h2>O valor é true</h2>
+} @else if (count == 2) {
+    <h2>O número é 2</h2>
+}
+
+<h2 *ngIf="value">O valor é true</h2>
+
+@for(item of lista; track item) {
+    <p>{{ item }}</p>
+} @empty {
+    <p>vazio!</p>
+}
+
+<div *ngFor="let item of lista">
+    <p>{{item}}</p>
+</div>
+<h2 *ngIf="lista.length == 0">A lista está vazia</h2>
