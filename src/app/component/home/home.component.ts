@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FooterComponent } from "./footer/footer.component";
 import { FooterModule } from './footer/footer.module';
 
@@ -11,11 +11,12 @@ import { FooterModule } from './footer/footer.module';
 })
 export class HomeComponent {
 
-  name = "Nicolas";
+  name = signal("Nicolas");
+  cont = 0;
   
 
   teste() {
-    console.log("oi")
+    this.cont += 1;
   }
 
 }
